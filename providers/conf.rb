@@ -40,6 +40,7 @@ action :create do
 
   template "/etc/openvpn/#{new_resource.name}.conf" do
     source 'server.conf.erb'
+    cookbook new_resource.cookbook
     owner 'root'
     group 'root'
     mode 0644
